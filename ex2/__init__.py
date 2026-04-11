@@ -1,34 +1,21 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  capabilities.py                                   :+:      :+:    :+:    #
+#  __init__.py                                       :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: klucchin <klucchin@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/04/08 12:54:17 by klucchin        #+#    #+#               #
-#  Updated: 2026/04/09 16:04:08 by klucchin        ###   ########.fr        #
+#  Created: 2026/04/09 16:11:25 by klucchin        #+#    #+#               #
+#  Updated: 2026/04/09 16:21:45 by klucchin        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from abc import ABC, abstractmethod
+from .strategies import NormalStrategy, AggressiveStrategy, DefensiveStrategy
+from .exception import InvalidStrategyError
 
-
-class HealCapability(ABC):
-
-    @abstractmethod
-    def heal(self, target: str = None):
-        pass
-
-
-class TransformCapability(ABC):
-
-    def __init__(self):
-        self.transformed = False
-
-    @abstractmethod
-    def transform(self):
-        pass
-
-    @abstractmethod
-    def revert(self):
-        pass
+__all__ = [
+    "NormalStrategy",
+    "AggressiveStrategy",
+    "DefensiveStrategy",
+    "InvalidStrategyError",
+]
