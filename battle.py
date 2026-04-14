@@ -6,14 +6,14 @@
 #  By: klucchin <klucchin@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/04/08 11:02:55 by klucchin        #+#    #+#               #
-#  Updated: 2026/04/08 11:44:11 by klucchin        ###   ########.fr        #
+#  Updated: 2026/04/14 14:07:13 by klucchin        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from ex0 import FlameFactory as Flame, AquaFactory as Aqua
 
 
-def test_factory(factory) -> None:
+def test_factory(factory: Flame | Aqua) -> None:
     print("Testing factory")
 
     base = factory.create_base()
@@ -27,7 +27,7 @@ def test_factory(factory) -> None:
     print()
 
 
-def battle(factory1, factory2) -> None:
+def battle(factory1: Flame | Aqua, factory2: Flame | Aqua) -> None:
     print("Testing battle")
 
     print(factory1.create_base().describe())

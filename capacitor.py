@@ -6,14 +6,14 @@
 #  By: klucchin <klucchin@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/04/09 15:57:06 by klucchin        #+#    #+#               #
-#  Updated: 2026/04/09 16:07:13 by klucchin        ###   ########.fr        #
+#  Updated: 2026/04/14 13:49:53 by klucchin        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
 
 
-def test_healing(factory):
+def test_healing(factory: HealingCreatureFactory) -> None:
     print("Testing Creature with healing capability")
 
     base = factory.create_base()
@@ -30,7 +30,7 @@ def test_healing(factory):
     print(evolved.heal())
 
 
-def test_transform(factory):
+def test_transform(factory: TransformCreatureFactory) -> None:
     print("Testing Creature with transform capability")
 
     base = factory.create_base()

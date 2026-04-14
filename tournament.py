@@ -6,17 +6,18 @@
 #  By: klucchin <klucchin@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/04/09 16:20:34 by klucchin        #+#    #+#               #
-#  Updated: 2026/04/09 16:25:13 by klucchin        ###   ########.fr        #
+#  Updated: 2026/04/14 13:41:58 by klucchin        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from ex0 import FlameFactory, AquaFactory
+from ex0 import FlameFactory, AquaFactory, CreatureFactory
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
-from ex2 import NormalStrategy, AggressiveStrategy, DefensiveStrategy
+from ex2 import (NormalStrategy, AggressiveStrategy,
+                 DefensiveStrategy, BattleStrategy)
 from ex2 import InvalidStrategyError
 
 
-def battle(opponents):
+def battle(opponents: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
     print("*** Tournament ***")
     print(f"{len(opponents)} opponents involved")
 
